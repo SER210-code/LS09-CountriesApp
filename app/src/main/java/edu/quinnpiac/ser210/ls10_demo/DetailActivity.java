@@ -2,8 +2,10 @@ package edu.quinnpiac.ser210.ls10_demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 
-public class DetailActivity extends Activity {
+public class DetailActivity extends AppCompatActivity{
 
     private int countryId;
     @Override
@@ -13,7 +15,7 @@ public class DetailActivity extends Activity {
 
 
         countryId = getIntent().getExtras().getInt("countryid");
-        CountryDetail frag = (CountryDetail) getFragmentManager().findFragmentById(R.id.fragment_country_detail);
+        CountryDetail frag = (CountryDetail) getSupportFragmentManager().findFragmentById(R.id.fragment_country_detail);
         frag.setCountryId(countryId);
       
     }
